@@ -76,6 +76,7 @@ def select_escuelas():
     modalidades_val = modalidades_select.value
     acceso_val = acceso_select.value
     sostenimiento_val = sostenimiento_select.value
+    print (sostenimiento_val)
     selected = dfinal[
         (dfinal['Número de docentes'] >= docentes_slider.value) &
         (dfinal['Número de estudiantes'] >= estudiantes_slider.value) &
@@ -83,7 +84,6 @@ def select_escuelas():
         (dfinal['Modalidad'] == modalidades_val) &
         (dfinal['Acceso (terrestre/ aéreo/fluvial)'] == acceso_val) &
         (dfinal['Sostenimiento'] == sostenimiento_val)
-
 
       
          
@@ -111,11 +111,11 @@ def update():
 for control in controls:
     control.on_change('value', lambda attr, old, new: update())
 
-desc = Div(text=open(join(dirname(__file__), "titulo.html")).read(), sizing_mode="stretch_width")
+
 
 #l = row(inputs, p)
 
-l = column(desc, row(inputs, p), sizing_mode="scale_both")
+l = row(inputs, p)
 
 update()  # initial load of the data
 
