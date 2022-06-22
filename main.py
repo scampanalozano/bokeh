@@ -111,7 +111,7 @@ def update():
 for control in controls:
     control.on_change('value', lambda attr, old, new: update())
 
-desc = Div(text=open(join(dirname(__file__), "index.html")).read(), sizing_mode="stretch_width")
+desc = Div(text=open(join(dirname(__file__), "titulo.html")).read(), sizing_mode="stretch_width")
 
 #l = row(inputs, p)
 
